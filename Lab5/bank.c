@@ -33,12 +33,12 @@ main()
 	int bal1, bal2;					// Balance read by processes
 	int flag, flag1;				// End of loop variables
 	sem_create(sem,1); //create semaphore with sem 
-	sem_create(sem1,1); //create semaphoes with the sem values
-	sem_create(sem2,1);
-	sem_create(sem3,1);
-	sem_create(sem4,1);
-	sem_create(sem5,1);
-	sem_create(sem6,1);		
+	sem_create(sem1,0); //create semaphoes with the sem values
+	sem_create(sem2,0);
+	sem_create(sem3,0);
+	sem_create(sem4,0);
+	sem_create(sem5,0);
+	sem_create(sem6,0);		
 			
 	//Initialize the file balance to be $100
 	fp1 = fopen("balance","w");
@@ -63,7 +63,7 @@ main()
 	if (pid == CHILD){
 	//First Child Process. Dear old dad tries to do some updates.
 	
-		N=9;
+		N=5;
 		for(i=1;i<=N; i++)
 		{
 			V(sem1); //increment Dad bc it expressed interest
@@ -154,8 +154,8 @@ main()
 						fclose(fp3);
 					}
 				}
+				V(sem);//<== Insert V(sem)
 				P(sem2);
-				V(sem); //<=== Insert V(sem)
 			}
 		}
 		else
