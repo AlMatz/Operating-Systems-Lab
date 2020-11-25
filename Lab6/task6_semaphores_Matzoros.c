@@ -45,7 +45,7 @@ main() {
 
     if (pid == CHILD) {
         for(int i=1; i<=N; i++) {
-            printf("int i = %d \n",i);
+            //printf("int i = %d \n",i);
                 P(lock);
                 int randNum = rand() % 3 + 1; // Pick a random number from 1-3
                 if (randNum == 1) {
@@ -113,7 +113,7 @@ main() {
                     if(semctl(Latch,0,GETVAL)) {
                         // Pick up tobacco
                         // Pick up paper
-                        printf("smoker_mach Picks up tobacco and paper\n");
+                        printf("smoker_match Picks up tobacco and paper\n");
                     }
                     V(agent);
                     V(lock);
