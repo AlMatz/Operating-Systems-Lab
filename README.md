@@ -20,3 +20,11 @@ Lab 5:
        Part A: Used P(sem) and V(sem) functions described in sem.h file to synchronize a program that utilizes three processes. The processes consist of a father who adds money into an account, and two children who try to take money from the account. The P and V functions are used so that no process tries to take or add money when another process is changing the balance of the account. 
       
        Part B: Counted how often process are waiting to run while other processes are running. This is done by using addittional semaphores to act as counter and flags. 
+
+Lab 6: 
+       
+       Part A: Used P(sem) and V(sem) functions described in sem.h file to synchronize a smoking program that utilizes an agent that places smoking objets on a table and three smoking processes that use the items the agent placed. The three processes would be activated depending on which object the agent put down, i.e., the paper, match, or tobacco. The P and V functions are used to create synchronization so that no two processes try to run at the same time. 
+      
+       Part B: Using Pthreads instead of semaphores to synchronize the processes for the same program stated above. The pthreads were very similar, except this time the pthread_unlock and pthread_lock functions were used. The synchronization was the same for both the pthread and semaphore implementation.
+
+
